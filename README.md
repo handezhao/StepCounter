@@ -2,9 +2,9 @@
 ---
 ### OverView
 * 效果图   
-![github](https://github.com/handezhao/StepCounter.git/raw/master/picture/stepview.png)
+![github](https://raw.githubusercontent.com/handezhao/StepCounter/master/picture/stepview.png)
 * 实现思路  
-![github](https://github.com/handezhao/StepCounter.git/raw/master/picture/xmind.png)    
+![github](https://raw.githubusercontent.com/handezhao/StepCounter/master/picture/xmind.png)    
 
 ### Usage
 > 通过StepCounter添加SensorChangeListener的监听   

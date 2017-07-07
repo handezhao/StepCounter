@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 
 import com.hdz.step.R;
-import com.hdz.step.helper.Console;
+import com.hdz.step.db.WalkDao;
 import com.hdz.step.steps.SensorChangeListener;
 import com.hdz.step.steps.StepCounter;
 import com.hdz.step.widget.StepView;
@@ -22,22 +22,22 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         stepView = (StepView) findViewById(R.id.step_view);
 
-        Console.d("ddd", "start activity");
-
         sensorChangeListener = new SensorChangeListener() {
             @Override
             public void onSensorChanged(final int var, boolean useStepCounter) {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        stepView.setSteps(var);
+                        stepView.setSteps(var, 2000);
                     }
                 });
             }
         };
-
         StepCounter.getInstance().addSensorChangedListener(sensorChangeListener);
 
+        WalkDao dao = new WalkDao();
+        int todaySteps = dao.getTodayWalk().getSteps();
+        sensorChangeListener.onSensorChanged(todaySteps, true);
     }
 
     @Override

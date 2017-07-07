@@ -8,16 +8,11 @@
     android:orientation="vertical">
 
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
-
     <com.hdz.step.widget.StepView
         android:id="@+id/step_view"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="100dp"
         app:cirque_width="10dp"
         app:content_text_color="#0E3047"
         app:content_text_size="14sp"

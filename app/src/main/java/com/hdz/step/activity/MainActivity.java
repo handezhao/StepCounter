@@ -28,7 +28,7 @@ public class MainActivity extends Activity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        stepView.setSteps(var, 2000);
+                        stepView.setSteps(var, 5000);
                     }
                 });
             }

@@ -36,6 +36,7 @@ public class MainActivity extends Activity {
         StepCounter.getInstance().addSensorChangedListener(sensorChangeListener);
 
         WalkDao dao = new WalkDao();
+        if (dao.getTodayWalk() == null) return;
         int todaySteps = dao.getTodayWalk().getSteps();
         sensorChangeListener.onSensorChanged(todaySteps, true);
     }
